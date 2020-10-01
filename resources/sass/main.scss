@@ -1,9 +1,5 @@
-@media only screen and (max-device-width: 780px) {
+@media (min-width: 780px) {
     .carousel {
-        width: 100%;
+        width: 50%;
     }
-}
-
-.titre_accueil{
-    text-align: center;
 }
