@@ -1,4 +1,6 @@
-.titre_accueil {
-  text-align: center;
+@media (min-width: 780px) {
+  .carousel {
+    width: 50%;
+  }
 }
 
