@@ -16,6 +16,7 @@ class CreateHabitationTable extends Migration
         Schema::create('habitation', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
+            $table->string('slug')->unique();
             $table->text('description');
             $table->string('ville');
             $table->string('cp');

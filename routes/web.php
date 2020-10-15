@@ -13,7 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Main route
+*/
 Route::get('/', function () { return view('home'); });
+
+/**
+ * Routes habitation
+ */
+Route::get('/habitation', 'HabitationController@habitation')->name('habitation');
+Route::get('/habitation/add', 'HabitationController@add')->name('addHabitation');
+Route::get('/habitation/{slug}', 'HabitationController@details')->name('detailsHabitation');
+Route::post('/habitation', 'HabitationController@store')->name('storeHabitation')->middleware('auth');
+//Route::put('/posts/{id}', 'PostController@update')->name('updatePost');
+//Route::delete('/posts/{id}', 'PostController@remove')->name('deletePost');
 
 Auth::routes();
 
