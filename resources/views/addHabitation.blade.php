@@ -67,26 +67,26 @@
         </div>
 
         <div class="form-group">
-            <label>Image1</label>
+            <label>Image 1</label>
             <input type="file" name="image1" accept="image/jpg" required class="form-control">
         </div>
 
         <div class="form-group">
-            <label>Image2</label>
+            <label>Image 2</label>
             <input type="file" name="image2" accept="image/jpg" required class="form-control">
         </div>
 
         <div class="form-group">
-            <label>Image3</label>
+            <label>Image 3</label>
             <input type="file" name="image3" accept="image/jpg" required class="form-control">
         </div>
 
-{{--        <label>Catégorie</label>--}}
-{{--        <select class="form-control" name="category_id">--}}
-{{--            @foreach($categories as $category)--}}
-{{--                <option value="{{$category->id}}">{{$category->name}}</option>--}}
-{{--            @endforeach--}}
-{{--        </select>--}}
+        <label>Catégorie</label>
+        <select class="form-control" name="category_id">
+            @foreach($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+        </select>
 
         <button type="submit" class="btn btn-primary mt-5">Ajouter</button>
         @include('components.errors')

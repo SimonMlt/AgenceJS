@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImagePathHabitationTable extends Migration
+class AddCategoryIdHabitationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,12 @@ class AddImagePathHabitationTable extends Migration
     public function up()
     {
         Schema::table('habitation', function (Blueprint $table) {
-            $table->string('image')->nullable();
+            $table->unsignedBigInteger('category_id')->nullable();
+
+            $table->foreign('category_id')
+                ->references('id')
+                ->on('categorie_habitation')
+                ->onDelete('SET NULL');
         });
     }
 

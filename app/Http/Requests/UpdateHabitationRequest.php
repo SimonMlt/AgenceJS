@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreHabitationRequest extends FormRequest
+class UpdateHabitationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -36,9 +36,9 @@ class StoreHabitationRequest extends FormRequest
             'surface' => 'required',
             'annee' => 'required',
             'prix' => 'required',
-            'image1' => 'required',
-            'image2' => 'required',
-            'image3' => 'required',
+            'image1' => 'nullable|image',
+            'image2' => 'nullable|image',
+            'image3' => 'nullable|image',
             'category_id' => 'required'
         ];
     }

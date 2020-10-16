@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Habitation;
 use App\Http\Requests\StoreHabitationRequest;
 use Illuminate\Support\Facades\Auth;
@@ -34,12 +35,43 @@ class HabitationController extends Controller
     }
 
     /**
+     * View of habitationMaison ordering by created_at field
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function habitationMaison()
+    {
+        $habitation = Habitation::wherecategory_id('1')->get();
+        return view('habitation')->with('habitation', $habitation);
+    }
+
+    /**
+     * View of habitationVilla ordering by created_at field
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function habitationVilla()
+    {
+        $habitation = Habitation::wherecategory_id('2')->get();
+        return view('habitation')->with('habitation', $habitation);
+    }
+
+    /**
+     * View of habitationAppartement ordering by created_at field
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function habitationAppartement()
+    {
+        $habitation = Habitation::wherecategory_id('3')->get();
+        return view('habitation')->with('habitation', $habitation);
+    }
+
+    /**
      * View add post with categories inside request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function add()
     {
-        return view('addHabitation');
+        $categories = Category::all();
+        return view('addHabitation')->with('categories', $categories);
     }
 
     /**
@@ -63,25 +95,25 @@ class HabitationController extends Controller
         return redirect()->route('habitation');
     }
 
-//    public function update(UpdatePostRequest $request, $id)
-//    {
-//        $params = $request->validated();
-//        $post = Post::findOrFail($id);
-//        $params['image'] = isset($params['image']) ? $params['image'] : null;
-//
-//        $isImage = $params['image'];
-//        $params['image'] = $post->image;
-//
-//        if($isImage !== null){
-//            Storage::delete('public/' . $post->image);
-//            Storage::put('public/habitation', $isImage);
-//            $params['image'] = 'habitation/' . $isImage->hashName();
-//        }
-//        $post->update($params);
-//        return redirect()->route('habitation');
-//    }
-//
-//
+    public function update(UpdateHabitationRequest $request, $id)
+    {
+        $params = $request->validated();
+        $habitation = Habitation::findOrFail($id);
+        $params['image'] = isset($params['image']) ? $params['image'] : null;
+
+        $isImage = $params['image'];
+        $params['image'] = $habitation->image;
+
+        if($isImage !== null){
+            Storage::delete('public/' . $habitation->image);
+            Storage::put('public/habitation', $isImage);
+            $params['image'] = 'habitation/' . $isImage->hashName();
+        }
+        $habitation->update($params);
+        return redirect()->route('habitation');
+    }
+
+
     /**
      * Details of post
      * @param $slug
@@ -90,24 +122,24 @@ class HabitationController extends Controller
     public function details($slug)
     {
         $habitation = Habitation::where('slug', $slug)->firstOrFail();
-//        $categories = Category::all();
-        return view('detailsHabitation')
-            ->with('habitation', $habitation);
-//            ->with('categories', $categories);
+        $categories = Category::all();
+        return view('editHabitation')
+            ->with('habitation', $habitation)
+            ->with('categories', $categories);
     }
-//
-//    /**
-//     * Delete post into database
-//     * @param $id
-//     * @return \Illuminate\Http\RedirectResponse
-//     */
-//    public function remove($id)
-//    {
-//        $post = Post::findOrFail($id);
-//        Storage::delete('public/'.$post->image);
-//        $post->delete();
-//        return redirect()->route('habitation');
-//    }
+
+    /**
+     * Delete post into database
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function remove($id)
+    {
+        $habitation = Habitation::findOrFail($id);
+        Storage::delete('public/'.$habitation->image);
+        $habitation->delete();
+        return redirect()->route('habitation');
+    }
 
 
 

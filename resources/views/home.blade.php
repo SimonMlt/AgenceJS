@@ -25,22 +25,15 @@
 
         <div class="mt-5 col-md-4 col-sm-12">
             <div class="card" style="width: 18rem;">
-                <img src="storage/img/appartement.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Appartement</h5>
-                    <p class="card-text">Exemple d'une annonce d'appartement proposé par l'AgenceJS pour ses clients.</p>
-                    <a href="#" class="btn btn-primary">Voir l'annonce</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="mt-5 col-md-4 col-sm-12">
-            <div class="card" style="width: 18rem;">
                 <img src="storage/img/maison.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Maison</h5>
-                    <p class="card-text">Exemple d'une annonce de maison proposé par l'AgenceJS pour ses clients.</p>
-                    <a href="#" class="btn btn-primary">Voir l'annonce</a>
+                    <p class="card-text">Annonces de maisons proposées par l'AgenceJS pour ses clients.</p>
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                    <a href="{{route('habitationMaison')}}" class="btn btn-primary">Voir les annonces</a>
+                    @else
+                        <a href="{{route('register')}}" class="btn btn-primary">Voir les annonces</a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -50,8 +43,27 @@
                 <img src="storage/img/villa.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Villa</h5>
-                    <p class="card-text">Exemple d'une annonce de villa proposé par l'AgenceJS pour ses clients.</p>
-                    <a href="#" class="btn btn-primary">Voir l'annonce</a>
+                    <p class="card-text">Annonces de villas proposées par l'AgenceJS pour ses clients.</p>
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                    <a href="{{route('habitationVilla')}}" class="btn btn-primary">Voir les annonces</a>
+                    @else
+                        <a href="{{route('register')}}" class="btn btn-primary">Voir les annonces</a>
+                    @endif
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 col-md-4 col-sm-12">
+            <div class="card" style="width: 18rem;">
+                <img src="storage/img/appartement.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Appartement</h5>
+                    <p class="card-text">Annonces d'appartements proposées par l'AgenceJS pour ses clients.</p>
+                    @if(\Illuminate\Support\Facades\Auth::check())
+                    <a href="{{route('habitationAppartement')}}" class="btn btn-primary">Voir les annonces</a>
+                    @else
+                        <a href="{{route('register')}}" class="btn btn-primary">Voir les annonces</a>
+                    @endif
                 </div>
             </div>
         </div>
