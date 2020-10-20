@@ -27,9 +27,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <p><a class="scroll-link" href="#top-content">Accueil</a></p>
-                            <p><a href="#">Annonces</a></p>
-                            <p><a href="#">Contact</a></p>
+                            <p><a class="scroll-link" href="{{route('home')}}">Accueil</a></p>
+                            <p><a href="{{route('habitation')}}">Annonces</a></p>
+                            <p><a href="{{route('contact')}}">Contact</a></p>
                         </div>
                     </div>
                 </div>

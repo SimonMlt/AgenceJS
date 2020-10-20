@@ -55,10 +55,13 @@ Route::get('/categories/{id}', 'CategoryController@details')->name('detailsCateg
 Route::put('/categories/{id}', 'CategoryController@update')->name('updateCategory');
 Route::delete('/categories/{id}', 'CategoryController@remove')->name('deleteCategory');
 
+/**
+ * Route contact
+ */
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/contact', 'ContactController@email')->name('sendMailContact');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/contact', 'ContactController@index')->name('contact');
-Route::post('/contact', 'ContactController@email')->name('sendMailContact');
 
