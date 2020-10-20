@@ -24,7 +24,7 @@ Ci-dessous le détail des réponses aux critères imposés :
 
 ## Répartition des tâches
 
-Les tâches ont été réparties de la manière suivante :
+Les tâches ont été réparties de la manière suivante : <br>
 Jeevesen :
 <ol>Création des migrations</ol>
 <ol>Mise en page côté Front</ol>
