@@ -20,6 +20,7 @@
                         <td>{{$category->id}}</td>
                         <td>{{$category->name}}</td>
                         <td>
+{{--                            <a href="{{route('detailsCategory', $category->id)}}" class="btn btn-warning">Modifier</a>--}}
                             <form method="post" action="{{route('deleteCategory', $category->id)}}">
                                 @csrf
                                 @method('delete')
@@ -38,7 +39,7 @@
                 <div class="form-group mt-3">
                     <input type="text" name="name" class="form-control" required value="{{old('name')}}" placeholder="Entrer le nom de la catégorie...">
                 </div>
-                <button type="submit" class="btn btn-primary">Ajouter</button>
+                <button type="submit" id="btn_classic" class="btn btn-primary bg-danger">Ajouter</button>
                 @include('components.errors')
             </form>
         </div>

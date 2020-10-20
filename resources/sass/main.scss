@@ -4,6 +4,20 @@
     }
 }
 
+.btn{
+    border-radius:12px 0 12px 0;
+    width: 150px;
+    border:none;
+    font:bold 12px Verdana;
+    padding:6px 0 6px 0;
+}
+
+#btn_classic{
+    border-radius: 5%!important;
+    width: 150px;
+    background-color: #cc002a;
+}
+
 .btn_a {
     text-decoration: none!important;
 }
