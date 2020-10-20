@@ -29,11 +29,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Maison</h5>
                     <p class="card-text">Annonces de maisons proposées par l'AgenceJS pour ses clients.</p>
-                    @if(\Illuminate\Support\Facades\Auth::check())
                     <a href="{{route('habitationMaison')}}" class="btn btn-danger">Voir les annonces</a>
-                    @else
-                        <a href="{{route('register')}}" class="btn btn-danger">Voir les annonces</a>
-                    @endif
                 </div>
             </div>
         </div>
@@ -44,11 +40,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Villa</h5>
                     <p class="card-text">Annonces de villas proposées par l'AgenceJS pour ses clients.</p>
-                    @if(\Illuminate\Support\Facades\Auth::check())
                     <a href="{{route('habitationVilla')}}" class="btn btn-danger">Voir les annonces</a>
-                    @else
-                        <a href="{{route('register')}}" class="btn btn-danger">Voir les annonces</a>
-                    @endif
                 </div>
             </div>
         </div>
@@ -59,11 +51,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Appartement</h5>
                     <p class="card-text">Annonces d'appartements proposées par l'AgenceJS pour ses clients.</p>
-                    @if(\Illuminate\Support\Facades\Auth::check())
                     <a href="{{route('habitationAppartement')}}" class="btn btn-danger">Voir les annonces</a>
-                    @else
-                        <a href="{{route('register')}}" class="btn btn-danger">Voir les annonces</a>
-                    @endif
                 </div>
             </div>
         </div>

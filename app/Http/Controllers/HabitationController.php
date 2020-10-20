@@ -34,7 +34,10 @@ class HabitationController extends Controller
     public function habitation()
     {
         $habitation = Habitation::orderBy('created_at', 'desc')->get();
-        return view('habitation')->with('habitation', $habitation);
+        $reservation = Reservation::all();
+        return view('habitation')
+            ->with('habitation', $habitation)
+            ->with('reservation', $reservation);
     }
 
     /**
@@ -68,7 +71,7 @@ class HabitationController extends Controller
     }
 
     /**
-     * View add post with categories inside request
+     * View add habitation with categories inside request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function add()
@@ -78,7 +81,7 @@ class HabitationController extends Controller
     }
 
     /**
-     * Store post into database
+     * Store habitation into database
      * @param StoreHabitationRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -98,6 +101,11 @@ class HabitationController extends Controller
         return redirect()->route('habitation');
     }
 
+    /**
+     * Edit habitation
+     * @param $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($id)
     {
         $habitation = Habitation::findOrFail($id);
@@ -107,6 +115,12 @@ class HabitationController extends Controller
             ->with('categories', $categories);
     }
 
+    /**
+     * Update habitation
+     * @param UpdateHabitationRequest $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function update(UpdateHabitationRequest $request, $id)
     {
         $params = $request->validated();
@@ -143,7 +157,7 @@ class HabitationController extends Controller
     }
 
     /**
-     * Details of post
+     * Details of habitation
      * @param $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -157,7 +171,7 @@ class HabitationController extends Controller
     }
 
     /**
-     * Details of post
+     * Details of reservation
      * @param $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -169,7 +183,7 @@ class HabitationController extends Controller
     }
 
     /**
-     * Delete post into database
+     * Delete habitation into database
      * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */

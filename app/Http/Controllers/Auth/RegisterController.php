@@ -58,8 +58,8 @@ class RegisterController extends Controller
             'ville' => ['required', 'string', 'max:255'],
             'cp' => ['required', 'string', 'max:255'],
             'date_naissance' => ['required', 'string', 'max:255'],
-            'telephone' => ['required', 'string', 'max:255'],
-            'role' => ['required', 'string', 'max:255'],
+            'telephone' => ['required', 'string', 'max:255']
+//            'role' => ['required', 'string', 'max:255'],
         ]);
     }
 
@@ -81,7 +81,7 @@ class RegisterController extends Controller
             'cp' => $data['cp'],
             'date_naissance' => $data['date_naissance'],
             'telephone' => $data['telephone'],
-            'role' => $data['role'],
+            'role' => 'Utilisateur'
         ]);
     }
 }
