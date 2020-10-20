@@ -31,23 +31,23 @@
             <div class="ml-5 col-md-5 col-sm-13">
                 <h1>{{$habitation->nom}}</h1>
                 <p>{{$habitation->ville}}</p>
-                <p style="font-weight: 600; text-align: justify">{{$habitation->description}}</p><br>
+                <p style="font-weight: 600; font-size: 16px; text-align: justify">{{$habitation->description}}</p><br>
                 <div class="row pl-3">
-                    <p class="pr-4"><img class="pb-2" src="/storage/img/kitchen.png" width="25" alt="kitchen">
+                    <p class="pr-4" style="font-weight: 600; font-size: 16px; color: white;"><img class="pb-2" src="/storage/img/kitchen.png" width="25" alt="kitchen">
                         : {{$habitation->cuisine}}</p>
-                    <p class="pr-4"><img class="pb-2" src="/storage/img/bathroom.png" width="25" alt="bathroom">
+                    <p class="pr-4" style="font-weight: 600; font-size: 16px; color: white;"><img class="pb-2" src="/storage/img/bathroom.png" width="25" alt="bathroom">
                         : {{$habitation->salle_de_bain}}</p>
-                    <p class="pr-4"><img class="pb-2" src="/storage/img/toilet.png" width="25" alt="toilet">
+                    <p class="pr-4" style="font-weight: 600; font-size: 16px; color: white;"><img class="pb-2" src="/storage/img/toilet.png" width="25" alt="toilet">
                         : {{$habitation->toilettes}}</p>
-                    <p class="pr-4"><img class="pb-2" src="/storage/img/room.png" width="25" alt="room">
+                    <p class="pr-4" style="font-weight: 600; font-size: 16px; color: white;"><img class="pb-2" src="/storage/img/room.png" width="25" alt="room">
                         : {{$habitation->nb_pieces}}</p>
-                    <p class="pr-4"><img class="pb-2" src="/storage/img/bedroom.png" width="25" alt="bedroom">
+                    <p class="pr-4" style="font-weight: 600; font-size: 16px; color: white;"><img class="pb-2" src="/storage/img/bedroom.png" width="25" alt="bedroom">
                         : {{$habitation->nb_chambres}}</p>
                 </div>
                 <div class="row pl-3">
-                    <p class="pr-4" style="font-weight: 600">Surface : {{$habitation->surface}} m²</p>
-                    <p class="pr-4" style="font-weight: 600">Année : {{$habitation->annee}}</p>
-                    <p class="pr-4" style="font-weight: 600">Prix : {{number_format($habitation->prix,2)}} €</p>
+                    <p class="pr-4" style="font-weight: 600; font-size: 16px; color: white;">Surface : {{$habitation->surface}} m²</p>
+                    <p class="pr-4" style="font-weight: 600; font-size: 16px; color: white;">Année : {{$habitation->annee}}</p>
+                    <p class="pr-4" style="font-weight: 600; font-size: 16px; color: white;">Prix : {{number_format($habitation->prix,2)}} €</p>
                 </div>
                 @if(\Illuminate\Support\Facades\Auth::check())
                 <a class="btn_a" href="{{route('reservationHabitation', $habitation->slug)}}"><div class="svg-wrapper mt-5">
@@ -61,7 +61,7 @@
                             <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
                                 <rect class="shape" height="60" width="320" />
                             </svg>
-                            <div class="text">RESERVER</div>
+                            <div class="text" style="font-wi">RESERVER</div>
                         </div></a>
                 @endif
             </div>

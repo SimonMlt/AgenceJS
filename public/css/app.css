@@ -10903,6 +10903,18 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-image: url("/storage/img/background.jpg") !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  font-weight: 600;
+  font-size: 17px;
+}
+
 @media (min-width: 780px) {
   .carousel {
     width: 50%;
@@ -10945,13 +10957,14 @@ a.text-dark:focus {
 }
 
 .text {
-  color: #333;
+  color: white;
   font-family: "Roboto Condensed";
   font-size: 22px;
   letter-spacing: 8px;
   line-height: 32px;
   position: relative;
   top: -48px;
+  font-weight: 600;
 }
 
 @-webkit-keyframes draw {
@@ -10985,5 +10998,19 @@ a.text-dark:focus {
 .svg-wrapper:hover .shape {
   -webkit-animation: 0.5s draw linear forwards;
   animation: 0.5s draw linear forwards;
+}
+
+footer {
+  background-color: lightgray;
+  margin-top: 50px;
+}
+
+table {
+  background-color: white !important;
+}
+
+footer a {
+  text-decoration: none !important;
+  color: black;
 }
 

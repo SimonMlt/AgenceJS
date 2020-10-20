@@ -12,7 +12,7 @@
     </div>
 
     <div class="row">
-        <p class="text-justify mt-5 ml-auto mr-auto w-75">
+        <p class="text-justify mt-5 ml-auto mr-auto w-75" style="font-weight: 600; font-size: 16px; color: white;">
             Au sein de l'AgenceJS, vous pouvez retrouver tous les logements que nous proposons. Appartement, maison ou bien villa,
             vous avez l'embaras du choix. N'hésitez pas : rentrez votre code postal, et naviguez sur notre site pour découvrir
             les logements disponibles dans votre département. N'hésitez pas à nous contacter en cas de problèmes,
@@ -21,8 +21,6 @@
     </div>
 
     <div class="row">
-        <h2 class="col-md-12 m-auto text-center">Nos dernières annonces :</h2>
-
         <div class="mt-5 col-md-4 col-sm-12">
             <div class="card" style="width: 18rem;">
                 <img src="storage/img/maison.jpg" class="card-img-top" alt="...">
