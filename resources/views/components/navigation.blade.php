@@ -17,6 +17,9 @@
                     <a class="nav-link" href="{{route('adminReservation')}}">Liste des réservations</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('users')}}">Utilisateurs</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{route('categories')}}">Catégories</a>
                 </li>
             @endif

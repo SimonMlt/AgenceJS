@@ -36,8 +36,8 @@ Route::delete('/habitation/{id}', 'HabitationController@remove')->name('deleteHa
 /**
  * Routes users
  */
-Route::get('/users', 'CategoryController@index')->name('users');
-Route::delete('/users/{id}', 'CategoryController@remove')->name('deleteUser');
+Route::get('/users', 'UserController@index')->name('users');
+Route::delete('/users/{id}', 'UserController@remove')->name('deleteUser');
 
 /**
  * Routes réservation
