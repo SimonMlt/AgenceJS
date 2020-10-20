@@ -4,7 +4,7 @@
             <div class="row mt">
                 <div class="col-md-3 mt-3 footer-about wow fadeInUp animated"
                      style="visibility: visible; animation-name: fadeInUp;">
-                    <img class="logo-footer" src="../storage/img/logo.png" alt="logo-footer"
+                    <img class="logo-footer" src="/storage/img/logo.png" alt="logo-footer"
                          data-at2x="assets/img/logo.png" height="85">
                     <p>
                         Nous sommes une agence qui vous accompagne dans vos recherches
