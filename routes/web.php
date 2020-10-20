@@ -29,10 +29,16 @@ Route::get('/habitation/add', 'HabitationController@add')->name('addHabitation')
 Route::get('/habitation/details/{slug}', 'HabitationController@details')->name('detailsHabitation');
 Route::get('/habitation/reservation/{slug}', 'HabitationController@reservation')->name('reservationHabitation');
 Route::post('/habitation', 'HabitationController@store')->name('storeHabitation')->middleware('auth');
-Route::post('/habitation/reservation/{id}', 'ReservationController@storeReservation')->name('storeReservation')->middleware('auth');
 Route::get('/habitation/{id}', 'HabitationController@edit')->name('editHabitation');
 Route::put('/habitation/{id}', 'HabitationController@update')->name('updateHabitation');
 Route::delete('/habitation/{id}', 'HabitationController@remove')->name('deleteHabitation');
+
+/**
+ * Routes réservation
+ */
+Route::post('/habitation/reservation/{id}', 'ReservationController@storeReservation')->name('storeReservation')->middleware('auth');
+Route::get('/reservation', 'ReservationController@adminReservation')->name('adminReservation');
+
 
 /**
  * Routes categories

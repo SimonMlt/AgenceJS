@@ -1,7 +1,6 @@
 @extends('layouts.base')
 
 @section('content')
-    @if(\Illuminate\Support\Facades\Auth::check())
         <div class="row pt-5">
             <div id="carouselExampleCaptions" class="carousel slide w-50 h-25" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -50,14 +49,21 @@
                     <p class="pr-4" style="font-weight: 600">Année : {{$habitation->annee}}</p>
                     <p class="pr-4" style="font-weight: 600">Prix : {{number_format($habitation->prix,2)}} €</p>
                 </div>
+                @if(\Illuminate\Support\Facades\Auth::check())
                 <a class="btn_a" href="{{route('reservationHabitation', $habitation->slug)}}"><div class="svg-wrapper mt-5">
                     <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
                         <rect class="shape" height="60" width="320" />
                     </svg>
                     <div class="text">RESERVER</div>
                 </div></a>
+                @else
+                    <a class="btn_a" href="{{route('register')}}"><div class="svg-wrapper mt-5">
+                            <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+                                <rect class="shape" height="60" width="320" />
+                            </svg>
+                            <div class="text">RESERVER</div>
+                        </div></a>
+                @endif
             </div>
         </div>
-    @endif
-
 @endsection

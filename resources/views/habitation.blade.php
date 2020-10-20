@@ -1,13 +1,17 @@
 @extends('layouts.base')
 
 @section('content')
-    <h1>Liste des annonces</h1>
-
     @if(\Illuminate\Support\Facades\Auth::check() && Auth::user()->role == 'Admin')
         <div class="mb-3">
-            <a href="{{route('addHabitation')}}" id="btn_classic" class="btn btn-primary bg-danger">Déposer une annonce</a>
+            <a href="{{route('addHabitation')}}" id="btn_classic" class="btn btn-primary bg-danger">Déposer une
+                annonce</a>
         </div>
     @endif
+{{--    @if(\Illuminate\Support\Facades\Auth::check())--}}
+{{--        <div class="mb-3">--}}
+{{--            <a href="{{route('userReservation', $reservation->id)}}" id="btn_classic" class="btn btn-primary bg-danger">Mes réservations</a>--}}
+{{--        </div>--}}
+{{--    @endif--}}
     <br><br>
 
     <div class="row pl-4">
@@ -15,13 +19,13 @@
             <a href="{{route('habitation')}}" class="btn btn-outline-dark">Tous</a>
         </div>
         <div class="pr-2">
-            <a href="{{route('habitationMaison')}}" class="btn btn-outline-danger text-dark">Maison</a>
+            <a href="{{route('habitationMaison')}}" class="btn btn-outline-danger">Maison</a>
         </div>
         <div class="pr-2">
-            <a href="{{route('habitationVilla')}}" class="btn btn-outline-danger text-dark">Villa</a>
+            <a href="{{route('habitationVilla')}}" class="btn btn-outline-danger">Villa</a>
         </div>
         <div>
-            <a href="{{route('habitationAppartement')}}" class="btn btn-outline-danger text-dark">Appartement</a>
+            <a href="{{route('habitationAppartement')}}" class="btn btn-outline-danger">Appartement</a>
         </div>
     </div>
 
@@ -40,13 +44,11 @@
                         <p>Mise en ligne le {{$habitations->created_at->format('d/m/Y')}}
                         </p>
 
-                        @if(\Illuminate\Support\Facades\Auth::check())
-                            <a href="{{route('detailsHabitation', $habitations->slug)}}" class="btn btn-primary bg-dark">En savoir plus</a>
-                        @else
-                            <a href="{{route('register')}}" class="btn btn-primary bg-dark">En savoir plus</a>
-                        @endif
+                        <a href="{{route('detailsHabitation', $habitations->slug)}}" class="btn btn-primary bg-dark">En
+                            savoir plus</a>
+
                         @if(\Illuminate\Support\Facades\Auth::check() && Auth::user()->role == 'Admin')
-                        <a href="{{route('editHabitation', $habitations->id)}}" class="btn btn-primary bg-danger">Modifier</a>
+                            <a href="{{route('editHabitation', $habitations->id)}}" class="btn btn-primary bg-danger">Modifier</a>
                         @endif
                     </div>
                 </div>

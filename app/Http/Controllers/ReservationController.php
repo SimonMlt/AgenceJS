@@ -9,18 +9,19 @@ use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
-    /**
-     * Store post into database
-     * @param StoreReservationRequest $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function storeReservation(StoreReservationRequest $request, $id)
     {
         $params = $request->validated();
         $params['user_id'] = Auth::id();
-        $params['habitation_id'] = Habitation::findOrFail($id);
-        dd($params);
+        $params['habitation_id'] = $id;
         Reservation::create($params);
         return redirect()->route('habitation');
+    }
+
+    public function adminReservation()
+    {
+        $reservation = Reservation::all();
+        return view('adminReservation')
+            ->with('reservation', $reservation);
     }
 }
