@@ -10903,3 +10903,18 @@ a.text-dark:focus {
   }
 }
 
+@media (min-width: 780px) {
+  .carousel {
+    width: 50%;
+  }
+}
+
+footer {
+  background-color: lightgray;
+}
+
+footer a {
+  text-decoration: none !important;
+  color: black;
+}
+

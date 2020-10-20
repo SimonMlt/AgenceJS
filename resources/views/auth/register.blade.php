@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="cp" class="col-md-4 col-form-label text-md-right">{{ __('Code Postale') }}</label>
+                            <label for="cp" class="col-md-4 col-form-label text-md-right">{{ __('Code Postal') }}</label>
 
                             <div class="col-md-6">
                                 <input id="cp" type="text" class="form-control" name="cp">
