@@ -13,9 +13,9 @@
                 <a class="nav-link" href="{{route('habitation')}}">Annonces</a>
             </li>
             @if(Auth::check() && Auth::user()->role == 'Admin')
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('adminReservation')}}">Liste des réservations</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('adminReservation')}}">Liste des réservations</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('categories')}}">Catégories</a>
                 </li>
