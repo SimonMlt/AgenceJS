@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-group">
-            <label>Code Postale</label>
+            <label>Code Postal</label>
             <input type="text" class="form-control" name="cp" required>
         </div>
 

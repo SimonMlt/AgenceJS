@@ -27,7 +27,7 @@ class CreateHabitationTable extends Migration
             $table->integer('nb_chambres');
             $table->float('surface');
             $table->integer('annee');
-            $table->float('prix', 11, 2);
+            $table->float('prix',11,2);
             $table->string('image1');
             $table->string('image2')->nullable();
             $table->string('image3')->nullable();

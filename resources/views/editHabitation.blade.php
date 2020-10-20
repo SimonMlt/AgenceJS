@@ -5,7 +5,7 @@
         @if(\Illuminate\Support\Facades\Auth::check())
         <h2>Modifier l'annonce</h2>
 
-        <form method="post" action="{{route('updatePost', $habitation->id)}}" enctype="multipart/form-data">
+        <form method="post" action="{{route('updatePost', $habitation->slug)}}" enctype="multipart/form-data">
             @csrf
             @method('put')
             <div class="form-group">
@@ -57,20 +57,20 @@
                 <input type="text" class="form-control" name="prix" required value="{{$habitation->prix}}">
             </div>
 
-            <div class="form-group">
-                <label>Image 1</label>
-                <input type="file" name="image1" accept="image/jpg" required class="form-control">
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label>Image 1</label>--}}
+{{--                <input type="file" name="image1" accept="image/jpg" required class="form-control">--}}
+{{--            </div>--}}
 
-            <div class="form-group">
-                <label>Image 2</label>
-                <input type="file" name="image2" accept="image/jpg" required class="form-control">
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label>Image 2</label>--}}
+{{--                <input type="file" name="image2" accept="image/jpg" required class="form-control">--}}
+{{--            </div>--}}
 
-            <div class="form-group">
-                <label>Image 3</label>
-                <input type="file" name="image3" accept="image/jpg" required class="form-control">
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label>Image 3</label>--}}
+{{--                <input type="file" name="image3" accept="image/jpg" required class="form-control">--}}
+{{--            </div>--}}
 
             <label>Catégorie</label>
             <select class="form-control" name="category_id">
