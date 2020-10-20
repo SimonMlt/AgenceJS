@@ -1,61 +1,49 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+    <img src="public/storage/img/logo.png" width="400">
 </p>
 
-## About Laravel
+## À propos
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Pour le projet Laravel, Jeevesen et moi-même avons choisi de réaliser un site d'immobilier.
+Sur ce site, l'utilisateur peut consulter des annonces d'appartements, de maisons ou de villas. Afin d'afiner sa recherche, il peut aussi filtrer en fonction de ses besoins, c'est-à-dire de sélectionner s'il souhaite rechercher des appartements, des maisons ou des villas.
+Une fois que ce dernier a trouvé l'appartement, la maison ou la villa de ses rêves, il peut réserver le bien afin de demander une visite. Pour se faire, l'utilisateur devra sélectionner la date à laquelle il souhaite visiter.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Impératifs techniques
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+L'application répond à tous les critères imposés, c'est-à-dire que nous avons 4 models, des migrations de bases de données, des relations de tables, le CRUD complet, un système d'administration, un système utilisateur avec inscription et connexion, un design libre, un GIT, et un README.
+Ci-dessous le détail des réponses aux critères imposés :
+<ol>4 Models : Les catégories, les habitations, les réservations, et les utilisateurs</ol>
+<ol>Migrations : Voir le dossier database/migrations</ol>
+<ol>Des relations de table : Plusieurs clés étrangères, par exemple la table réservation qui récupère l'id de l'utilisateur et l'id de l'habitation à réserver</ol>
+<ol>Le CRUD : Système de création, lecture, mise à jour et suppresion d'utilisateurs et d'habitations</ol>
+<ol>Un système d'administration : À voir quand on se connecte en admin (email : admin@gmail.com / password : rootroot [voire les seeders])</ol>
+<ol>Un système de connexion utilisateur : Voir sur le site directement</ol>
+<ol>Design libre : On a fait ce qu'on pouvait</ol>
+<ol>GIT : Oui</ol>
+<ol>README : Vous êtes en train de le lire ☺</ol>
 
-## Learning Laravel
+## Répartition des tâches
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Les tâches ont été réparties de la manière suivante : <br>
+Jeevesen :
+<ol>Création des migrations</ol>
+<ol>Mise en page côté Front</ol>
+<ol>Création du système utilisateur</ol>
+<ol>Création des catégories</ol>
+<ol>Création des annonces d'habitations</ol>
+<ol>Création du système de réservation</ol>
+<ol>Organisation du site en fonction des rôles</ol>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Simon :
+<ol>Déploiement du GIT</ol>
+<ol>Mise en page côté Front</ol>
+<ol>Création des migrations</ol>
+<ol>Création des seeders</ol>
+<ol>Organisation du site en fonction des rôles</ol>
+<ol>Création du système de réservation</ol>
+<ol>Rédaction du README</ol>
 
-## Laravel Sponsors
+## Axes d'amélioration
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Notre projet de l'AgenceJS peut-être améliorer, et nous vous proposons les améliorations suivantes :
+<ol>Mise en place d'un système de date et heure de réservation unique</ol>
