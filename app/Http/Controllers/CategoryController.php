@@ -20,6 +20,15 @@ class CategoryController extends Controller
         return back();
     }
 
+    public function update(StoreCategoryRequest $request, $id)
+    {
+        $params = $request->validated();
+        $category = Category::findOrFail($id);
+        dd($params);
+        $category->update($params);
+        return back();
+    }
+
     public function details($id)
     {
         $category = Category::findOrFail($id);

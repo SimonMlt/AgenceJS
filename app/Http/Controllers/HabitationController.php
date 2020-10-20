@@ -98,30 +98,48 @@ class HabitationController extends Controller
         return redirect()->route('habitation');
     }
 
-    public function update(UpdateHabitationRequest $request, $slug)
+    public function edit($id)
     {
-        $params = $request->validated();
-        $habitation = Habitation::where('slug', $slug)->firstOrFail();
-
-        dd($params);
-
-        $habitation->update($params);
-        return redirect()->route('habitation');
-    }
-
-
-    /**
-     * Details of post
-     * @param $slug
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit($slug)
-    {
-        $habitation = Habitation::where('slug', $slug)->firstOrFail();
+        $habitation = Habitation::findOrFail($id);
         $categories = Category::all();
         return view('editHabitation')
             ->with('habitation', $habitation)
             ->with('categories', $categories);
+    }
+
+    public function update(UpdateHabitationRequest $request, $id)
+    {
+        $params = $request->validated();
+        $habitation = Habitation::findOrFail($id);
+
+        $params['image1'] = isset($params['image1']) ? $params['image1'] : null;
+        $isimage = $params['image1'];
+        $params['image1'] = $habitation->image1;
+        if($isimage !== null){
+            Storage::delete('public/' . $habitation->image1);
+            Storage::put('public/habitation', $isimage);
+            $params['image1'] = 'habitation/' . $isimage->hashName();
+        }
+
+        $params['image2'] = isset($params['image2']) ? $params['image2'] : null;
+        $isimage = $params['image2'];
+        $params['image2'] = $habitation->image2;
+        if($isimage !== null){
+            Storage::delete('public/' . $habitation->image2);
+            Storage::put('public/habitation', $isimage);
+            $params['image2'] = 'habitation/' . $isimage->hashName();
+        }
+
+        $params['image3'] = isset($params['image3']) ? $params['image3'] : null;
+        $isimage = $params['image3'];
+        $params['image3'] = $habitation->image3;
+        if($isimage !== null){
+            Storage::delete('public/' . $habitation->image3);
+            Storage::put('public/habitation', $isimage);
+            $params['image3'] = 'habitation/' . $isimage->hashName();
+        }
+        $habitation->update($params);
+        return redirect()->route('habitation');
     }
 
     /**
