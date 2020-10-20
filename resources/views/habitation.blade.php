@@ -33,13 +33,16 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$habitations->nom}}</h5>
                         <p class="card-text">{{$habitations->category->name}}</p>
-                        <p class="card-text">{{$habitations->description}}</p>
-                        <p class="card-text">{{$habitations->prix}} €</p>
+                        <p class="card-text">{{number_format($habitations->prix,2)}} €</p>
 
                         <p>Mise en ligne le {{$habitations->created_at->format('d/m/Y')}}
                         </p>
 
-                        <a href="#" class="btn btn-primary">En savoir plus</a>
+                        @if(\Illuminate\Support\Facades\Auth::check())
+                            <a href="{{route('detailsHabitation', $habitations->slug)}}" class="btn btn-primary">En savoir plus</a>
+                        @else
+                            <a href="{{route('register')}}" class="btn btn-primary">En savoir plus</a>
+                        @endif
                         @if(\Illuminate\Support\Facades\Auth::check() && Auth::user()->role == 'Admin')
                         <a href="{{route('editHabitation', $habitations->slug)}}" class="btn btn-primary">Modifier</a>
                         @endif

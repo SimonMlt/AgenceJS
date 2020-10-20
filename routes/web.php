@@ -26,10 +26,13 @@ Route::get('/habitation/maison', 'HabitationController@habitationMaison')->name(
 Route::get('/habitation/villa', 'HabitationController@habitationVilla')->name('habitationVilla');
 Route::get('/habitation/appartement', 'HabitationController@habitationAppartement')->name('habitationAppartement');
 Route::get('/habitation/add', 'HabitationController@add')->name('addHabitation');
-Route::get('/habitation/{slug}', 'HabitationController@details')->name('editHabitation');
+Route::get('/habitation/edit/{slug}', 'HabitationController@edit')->name('editHabitation');
+Route::get('/habitation/details/{slug}', 'HabitationController@details')->name('detailsHabitation');
+Route::get('/habitation/reservation/{slug}', 'HabitationController@reservation')->name('reservationHabitation');
 Route::post('/habitation', 'HabitationController@store')->name('storeHabitation')->middleware('auth');
-Route::put('/posts/{id}', 'PostController@update')->name('updatePost');
-Route::delete('/posts/{id}', 'PostController@remove')->name('deletePost');
+Route::post('/habitation/reservation/{id}', 'ReservationController@storeReservation')->name('storeReservation')->middleware('auth');
+Route::put('/habitation/edit/{slug}', 'HabitationController@update')->name('updatePost');
+Route::delete('/habitation/{id}', 'HabitationController@remove')->name('deletePost');
 
 /**
  * Routes categories

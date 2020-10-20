@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Habitation;
 use App\Http\Requests\StoreHabitationRequest;
+use App\Http\Requests\StoreReservationRequest;
+use App\Http\Requests\UpdateHabitationRequest;
+use App\Reservation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -95,20 +98,13 @@ class HabitationController extends Controller
         return redirect()->route('habitation');
     }
 
-    public function update(UpdateHabitationRequest $request, $id)
+    public function update(UpdateHabitationRequest $request, $slug)
     {
         $params = $request->validated();
-        $habitation = Habitation::findOrFail($id);
-        $params['image'] = isset($params['image']) ? $params['image'] : null;
+        $habitation = Habitation::where('slug', $slug)->firstOrFail();
 
-        $isImage = $params['image'];
-        $params['image'] = $habitation->image;
+        dd($params);
 
-        if($isImage !== null){
-            Storage::delete('public/' . $habitation->image);
-            Storage::put('public/habitation', $isImage);
-            $params['image'] = 'habitation/' . $isImage->hashName();
-        }
         $habitation->update($params);
         return redirect()->route('habitation');
     }
@@ -119,13 +115,39 @@ class HabitationController extends Controller
      * @param $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function details($slug)
+    public function edit($slug)
     {
         $habitation = Habitation::where('slug', $slug)->firstOrFail();
         $categories = Category::all();
         return view('editHabitation')
             ->with('habitation', $habitation)
             ->with('categories', $categories);
+    }
+
+    /**
+     * Details of post
+     * @param $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function details($slug)
+    {
+        $habitation = Habitation::where('slug', $slug)->firstOrFail();
+        $categories = Category::all();
+        return view('detailsHabitation')
+            ->with('habitation', $habitation)
+            ->with('categories', $categories);
+    }
+
+    /**
+     * Details of post
+     * @param $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function reservation($slug)
+    {
+        $habitation = Habitation::where('slug', $slug)->firstOrFail();
+        return view('reservationHabitation')
+            ->with('habitation', $habitation);
     }
 
     /**

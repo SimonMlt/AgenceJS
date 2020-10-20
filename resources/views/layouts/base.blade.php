@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row mt">
                 <div class="col-md-3 mt-3 footer-about wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-                    <img class="logo-footer" src="../storage/img/logo.png" alt="logo-footer" data-at2x="assets/img/logo.png" height="85">
+                    <img class="logo-footer" src="../../storage/img/logo.png" alt="logo-footer" data-at2x="assets/img/logo.png" height="85">
                     <p>
                         We are a young company always looking for new and creative ideas to help you with our products in your everyday work.
                     </p>
