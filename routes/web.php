@@ -34,6 +34,12 @@ Route::put('/habitation/{id}', 'HabitationController@update')->name('updateHabit
 Route::delete('/habitation/{id}', 'HabitationController@remove')->name('deleteHabitation');
 
 /**
+ * Routes users
+ */
+Route::get('/users', 'CategoryController@index')->name('users');
+Route::delete('/users/{id}', 'CategoryController@remove')->name('deleteUser');
+
+/**
  * Routes réservation
  */
 Route::post('/habitation/reservation/{id}', 'ReservationController@storeReservation')->name('storeReservation')->middleware('auth');
