@@ -1,6 +1,7 @@
 body {
     background-image: url("/storage/img/background.jpg")!important;
     background-size: cover!important;
+    background-attachment: fixed!important;
 }
 
 nav {
@@ -51,13 +52,14 @@ nav {
 }
 
 .text {
-    color: #333;
+    color: white;
     font-family: 'Roboto Condensed';
     font-size: 22px;
     letter-spacing: 8px;
     line-height: 32px;
     position: relative;
     top: -48px;
+    font-weight: 600;
 }
 
 @keyframes draw {

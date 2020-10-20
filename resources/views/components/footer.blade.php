@@ -1,5 +1,5 @@
 <footer>
-    <div class="text-dark mt-5 text-center">
+    <div class="text-dark text-center">
         <div class="container">
             <div class="row mt">
                 <div class="col-md-3 mt-3 footer-about wow fadeInUp animated"
