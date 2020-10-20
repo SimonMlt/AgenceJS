@@ -1,3 +1,14 @@
+body {
+    background-image: url("/storage/img/background.jpg")!important;
+    background-size: cover!important;
+}
+
+nav {
+    background-color: rgba(255,255,255,0.5)!important;
+    font-weight: 600;
+    font-size: 17px;
+}
+
 @media (min-width: 780px) {
     .carousel {
         width: 50%;
