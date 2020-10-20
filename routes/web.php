@@ -58,3 +58,7 @@ Route::delete('/categories/{id}', 'CategoryController@remove')->name('deleteCate
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/contact', 'ContactController@email')->name('sendMailContact');
+

@@ -48,3 +48,4 @@ Simon :
 Notre projet de l'AgenceJS peut-être améliorer, et nous vous proposons les améliorations suivantes :
 <ol>Mise en place d'un système de date et heure de réservation unique</ol>
 <ol>Vérification de l'âge de l'utilisateur lors de son inscription</ol>
+<ol>Fin du système de la page contact</ol>

@@ -37274,6 +37274,8 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+__webpack_require__(/*! ./contact */ "./resources/js/contact.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37318,6 +37320,38 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/contact.js":
+/*!*********************************!*\
+  !*** ./resources/js/contact.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Selectors
+ * @type {Element}
+ */
+var formContact = document.querySelector('#form-contact');
+var btnContact = document.querySelector('#btn-contact');
+formContact.addEventListener("submit", function (e) {
+  e.preventDefault();
+  btnContact.textContent = "Envoi du message..."; //Faire une requête sur le controller contact pour envoyer le mail
+
+  var request = new XMLHttpRequest(); // Récupérer les inputs dans une variable
+
+  var formData = new FormData(formContact);
+  request.addEventListener("load", function () {
+    btnContact.textContent = "Message envoyé";
+  }, false);
+  request.addEventListener("error", function () {
+    btnContact.textContent = "Erreur d'envoi du message";
+  }, false);
+  request.open('POST', '/contact');
+  request.send(formData);
+});
 
 /***/ }),
 

@@ -23,7 +23,7 @@ class ContactController extends Controller
     public function email(Request $request)
     {
         //Envoi de l'email
-        Mail::to('contact@mon-blog.com')->send(new ContactMail($request->all()));
+        Mail::to('contact@agencejs.com')->send(new ContactMail($request->all()));
         return response()->json(['success' => 'success']);
     }
 
